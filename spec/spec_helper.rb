@@ -1,2 +1,2 @@
 require 'rspec'
-require 'omniauth-stripe-connect'
+require 'omniauth-stripe-express'

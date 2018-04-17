@@ -2,14 +2,14 @@ require 'omniauth/strategies/oauth2'
 
 module OmniAuth
   module Strategies
-    class StripeConnect < OmniAuth::Strategies::OAuth2
-      option :name, :stripe_connect
+    class StripeExpress < OmniAuth::Strategies::OAuth2
 
+      option :name, :stripe_express
       option :client_options, {
-        :site => 'https://connect.stripe.com'
+        :site => "https://connect.stripe.com",
+        :authorize_url => "/express/oauth/authorize"
       }
 
-      option :authorize_options, [:scope, :stripe_landing, :always_prompt]
       option :provider_ignores_state, true
 
       uid { raw_info[:stripe_user_id] }
